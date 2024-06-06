@@ -99,11 +99,12 @@ export default function Home() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Blood Group</label>
+          <label className="block text-sm font-medium text-gray-700">Blood Group*</label>
           <input
             type="text"
             placeholder="Blood Group"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+            required
           />
         </div>
 
