@@ -2,11 +2,10 @@ import Image from "next/image";
 
 
 
-  export default function Home() {
-    return (
-     
-      
-        <div className="max-w-lg mx-auto p-6 shadow-md rounded-md">
+export default function Home() {
+  return (
+
+    <div className="max-w-lg mx-auto p-6 shadow-md rounded-md">
       <h1 className="text-2xl font-bold mb-4 text-center">New Patient Registration</h1>
       <form>
         <div className="mb-4">
@@ -126,15 +125,15 @@ import Image from "next/image";
         </div>
 
         <div className="mb-4">
-  <label className="block text-sm font-medium text-gray-700">Declaration:</label>
-  <div className="flex items-center mt-2">
-    <input
-      type="checkbox"
-      className="mt-0 mr-2 border-gray-300 rounded-md"
-    />
-    <span className="text-gray-700">I hereby, declare that the details given above are true and correct.</span>
-  </div>
-</div>
+          <label className="block text-sm font-medium text-gray-700">Declaration:</label>
+          <div className="flex items-center mt-2">
+            <input
+              type="checkbox"
+              className="mt-0 mr-2 border-gray-300 rounded-md"
+            />
+            <span className="text-gray-700">I hereby, declare that the details given above are true and correct.</span>
+          </div>
+        </div>
 
         <div className="flex justify-center">
           <button
@@ -151,5 +150,5 @@ import Image from "next/image";
 
 
 
-    
+
 }
