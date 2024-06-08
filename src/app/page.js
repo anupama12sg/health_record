@@ -1,10 +1,35 @@
-import Image from "next/image";
+"use client"
 
-
+import Image from "next/image"; 
+ 
+import { useState } from "react";
 
 export default function Home() {
-  return (
+  const [firstName, setfirstName]= useState()
+  const [middle, setmiddleName]= useState()
+  const [last, setlastName]= useState()
+  const [dateOfBirth, setDOB]= useState()
+  const [gender, setGender]= useState('Male')
+  const [streetAddress, setStreetAddress]= useState()
+  const [city, setCity]= useState()
+  const [stateName, setStateName]= useState()
+  const [zipCode, setZipCode]= useState()
+  const [phoneNumber, setPhoneNumber]= useState()
+  const [emailAddress, setEmailAddress]= useState()
+  const [maritalStatus, setMaritalStatus]= useState('Single')
+  const [bloodGroup, setBloodGroup]= useState()
+  const [doctorName, setDoctorName]= useState()
+  const [medicalHistory, setMedicalHistory]= useState()
 
+  const handleSubmit= async ()=> {
+    console.log(firstName, middle, last, dateOfBirth, gender, streetAddress, city, stateName, zipCode, phoneNumber, emailAddress,
+      maritalStatus, bloodGroup, doctorName, medicalHistory)
+   // const patient= {fullName:  }
+    
+  }
+  
+  return (
+    
     <div className="max-w-lg mx-auto p-6 shadow-md rounded-md">
       <h1 className="text-2xl font-bold mb-4 text-center">New Patient Registration</h1>
       <form>
@@ -14,20 +39,20 @@ export default function Home() {
             <input
               type="text"
               placeholder="First"
-              className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md"
-              required
+              className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md" onChange={(e)=> {setfirstName(e.target.value) } }
+              
             />
             <input
               type="text"
               placeholder="Middle"
-              className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md"
-              required
+              className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md" onChange={(e)=> {setmiddleName(e.target.value) } }
+              
             />
             <input
               type="text"
               placeholder="Last"
-              className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md"
-              required
+              className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md" onChange={(e)=> {setlastName(e.target.value) } }
+              
             />
           </div>
         </div>
@@ -36,14 +61,15 @@ export default function Home() {
           <label className="block text-sm font-medium text-gray-700">Date of Birth *</label>
           <input
             type="date"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-            required
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" 
+            onChange={(e)=> {setDOB(e.target.value) } }
+      
           />
         </div>
 
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Gender *</label>
-          <select className="mt-1 p-2 w-full border border-gray-300 rounded-md" required>
+          <select className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setGender(e.target.value) } }> 
             <option>Male</option>
             <option>Female</option>
             <option>Other</option>
@@ -55,26 +81,26 @@ export default function Home() {
           <input
             type="text"
             placeholder="Street Address"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-            required
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md"onChange={(e)=> {setStreetAddress(e.target.value) } }
+            
           />
           <input
             type="text"
             placeholder="City"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-            required
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setCity(e.target.value) } }
+            
           />
           <input
             type="text"
             placeholder="State"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-            required
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setStateName(e.target.value) } }
+            
           />
           <input
             type="text"
             placeholder="Zip Code"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-            required
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setZipCode(e.target.value) } }
+            
           />
         </div>
 
@@ -83,8 +109,8 @@ export default function Home() {
           <input
             type="tel"
             placeholder="Phone Number"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-            required
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setPhoneNumber(e.target.value) } }
+            
           />
         </div>
 
@@ -93,14 +119,14 @@ export default function Home() {
           <input
             type="email"
             placeholder="Email Address"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-            required
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setEmailAddress(e.target.value) } }
+            
           />
         </div>
 
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Marital Status *</label>
-          <select className="mt-1 p-2 w-full border border-gray-300 rounded-md" required>
+          <select className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setMaritalStatus(e.target.value) } } >
             <option>Single</option>
             <option>Married</option>
             <option>Divorced</option>
@@ -113,8 +139,8 @@ export default function Home() {
           <input
             type="text"
             placeholder="Blood Group"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-            required
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setBloodGroup(e.target.value) } }
+            
           />
         </div>
 
@@ -123,7 +149,7 @@ export default function Home() {
           <input
             type="text"
             placeholder="Doctor Name"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setDoctorName(e.target.value) } }
           />
         </div>
 
@@ -131,7 +157,7 @@ export default function Home() {
           <label className="block text-sm font-medium text-gray-700">Medical History</label>
           <textarea
             placeholder="Medical History"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+            className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e)=> {setMedicalHistory(e.target.value) } }
           ></textarea>
         </div>
 
@@ -140,16 +166,16 @@ export default function Home() {
           <div className="flex items-center mt-2">
             <input
               type="checkbox"
-              className="mt-0 mr-2 border-gray-300 rounded-md"
-              required
+              className="mt-0 mr-2 border-gray-300 rounded-md" 
+              
             />
             <span className="text-gray-700">I hereby, declare that the details given above are true and correct.</span>
           </div>
         </div>
 
         <div className="flex justify-center">
-          <button
-            type="submit"
+          <button onClick={handleSubmit}
+            type="button"
             className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
           >
             Submit
