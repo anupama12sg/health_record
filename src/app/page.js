@@ -1,10 +1,11 @@
 "use client"
 
 import lighthouse from '@lighthouse-web3/sdk';
-import { useState } from "react";
 import { MerkleTree } from 'merkletreejs';
+import { useState } from "react";
 // import ethers, { sha256 } from 'ethers';
 import * as SHA256 from 'crypto-js/sha256';
+import { insert } from './services/db';
 
 export default function Home() {
   const [firstName, setfirstName] = useState()
@@ -24,6 +25,7 @@ export default function Home() {
   const [medicalHistory, setMedicalHistory] = useState()
 
   const handleSubmit = async () => {
+    console.log("Database connection ", dbo);
     const patient = {
       fullName: `${firstName} ${middle} ${last}`,
       dateOfBirth,
@@ -57,6 +59,10 @@ export default function Home() {
     const patientTree = new MerkleTree(leaves, SHA256);
     console.log("Merkle tree ", patientTree);
     const root = patientTree.getRoot().toString('hex');
+
+    const dbResponse = await insert();
+    console.log("dbResponse ", dbResponse);
+
     return root;
   }
 
