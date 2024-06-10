@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { MongoClient, ServerApiVersion } from "mongodb";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });

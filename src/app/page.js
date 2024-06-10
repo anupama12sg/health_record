@@ -77,19 +77,19 @@ export default function Home() {
               type="text"
               placeholder="First"
               className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md" onChange={(e) => { setfirstName(e.target.value) }}
-
+              required
             />
             <input
               type="text"
               placeholder="Middle"
               className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md" onChange={(e) => { setmiddleName(e.target.value) }}
-
+              required
             />
             <input
               type="text"
               placeholder="Last"
               className="w-1/3 mt-1 p-2 border border-gray-300 rounded-md" onChange={(e) => { setlastName(e.target.value) }}
-
+              required
             />
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
             type="date"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md"
             onChange={(e) => { setDOB(e.target.value) }}
-
+            required
           />
         </div>
 
@@ -119,25 +119,25 @@ export default function Home() {
             type="text"
             placeholder="Street Address"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setStreetAddress(e.target.value) }}
-
+            required
           />
           <input
             type="text"
             placeholder="City"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setCity(e.target.value) }}
-
+            required
           />
           <input
             type="text"
             placeholder="State"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setStateName(e.target.value) }}
-
+            required
           />
           <input
             type="text"
             placeholder="Zip Code"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setZipCode(e.target.value) }}
-
+            required
           />
         </div>
 
@@ -147,7 +147,7 @@ export default function Home() {
             type="tel"
             placeholder="Phone Number"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setPhoneNumber(e.target.value) }}
-
+            required
           />
         </div>
 
@@ -157,7 +157,7 @@ export default function Home() {
             type="email"
             placeholder="Email Address"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setEmailAddress(e.target.value) }}
-
+            required
           />
         </div>
 
@@ -177,7 +177,7 @@ export default function Home() {
             type="text"
             placeholder="Blood Group"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setBloodGroup(e.target.value) }}
-
+            required
           />
         </div>
 
@@ -187,6 +187,7 @@ export default function Home() {
             type="text"
             placeholder="Doctor Name"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setDoctorName(e.target.value) }}
+            required
           />
         </div>
 
@@ -195,7 +196,8 @@ export default function Home() {
           <textarea
             placeholder="Medical History"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md" onChange={(e) => { setMedicalHistory(e.target.value) }}
-          ></textarea>
+            required
+          />
         </div>
 
         <div className="mb-4">
@@ -204,7 +206,7 @@ export default function Home() {
             <input
               type="checkbox"
               className="mt-0 mr-2 border-gray-300 rounded-md"
-
+              required
             />
             <span className="text-gray-700">I hereby, declare that the details given above are true and correct.</span>
           </div>
