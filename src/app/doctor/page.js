@@ -37,11 +37,13 @@ export default function Home() {
         );
 
         console.log(uploadResponse);
-        console.log(doctor)
+        console.log(doctor);
+        const dbResponse = await insert("doctor", uploadResponse.data.Hash);
+        console.log("db response ", dbResponse);
     }
 
     return (
-        
+
         <div className="max-w-lg mx-auto p-6 shadow-md rounded-md">
             <h1 className="text-2xl font-bold mb-4 text-center">Doctor Registration Form</h1>
             <form>

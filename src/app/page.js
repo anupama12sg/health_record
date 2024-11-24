@@ -50,7 +50,7 @@ export default function Home() {
 
     console.log(uploadResponse);
     console.log(patient);
-    const dbResponse= await insert (uploadResponse.data.Hash);
+    const dbResponse= await insert ("patient", uploadResponse.data.Hash);
     console.log("db response ", dbResponse);
   }
 

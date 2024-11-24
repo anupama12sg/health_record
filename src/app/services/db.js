@@ -1,13 +1,12 @@
 import axios from "axios";
 
-export const insert = async () => {
+export const insert = async (collection, ipfs_cid) => {
   const data = JSON.stringify({
-    "collection": "patient",
+    "collection": collection,
     "database": "health_rec",
     "dataSource": "Cluster0",
     "projection": {
-      "_id": 1,
-      "firstName": "test"
+      "cid":ipfs_cid
     }
   });
 
