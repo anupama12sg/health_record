@@ -24,6 +24,7 @@ export default function Home() {
   const [bloodGroup, setBloodGroup] = useState()
   const [doctorName, setDoctorName] = useState()
   const [medicalHistory, setMedicalHistory] = useState()
+  const [ipfs, setIpfs] = useState()
 
   const handleSubmit = async () => {
     const patient = {
@@ -50,8 +51,9 @@ export default function Home() {
 
     console.log(uploadResponse);
     console.log(patient);
-    const dbResponse= await insert ("patient", uploadResponse.data.Hash);
-    console.log("db response ", dbResponse);
+    setIpfs(uploadResponse.data.Hash);
+    //const dbResponse= await insert ("patient", uploadResponse.data.Hash);
+    //console.log("db response ", dbResponse);
   }
 
   // pass the array of patient ids
@@ -77,7 +79,7 @@ export default function Home() {
     <>
       <div className="max-w-lg mx-auto p-6 shadow-md rounded-md">
         <h1 className="text-2xl font-bold mb-4 text-center">New Patient Registration</h1>
-        
+
         <div className="flex justify-center">
           <ConnectButton />
         </div>
@@ -235,6 +237,7 @@ export default function Home() {
           </div>
         </form>
         <button type='primary' onClick={() => createMerkleTree(['a', 'b', 'c'])}>Create Merkle Tree</button>
+        {ipfs ? <p>{ipfs}</p> : <></>}
       </div>
     </>
 
