@@ -236,7 +236,6 @@ export default function Home() {
             </button>
           </div>
         </form>
-        <button type='primary' onClick={() => createMerkleTree(['a', 'b', 'c'])}>Create Merkle Tree</button>
         {ipfs ? <p>{ipfs}</p> : <></>}
       </div>
     </>
