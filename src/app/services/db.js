@@ -18,7 +18,8 @@ export const insert = async (collection, ipfs_cid) => {
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',
-      'api-key': process.env.NEXT_PUBLIC_MONGODB_API_KEY,
+      
+      'Authorization':`Bearer ${process.env.NEXT_PUBLIC_MONGODB_API_KEY}`
     },
     data: data
   }
