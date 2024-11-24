@@ -39,7 +39,7 @@ export default function Home() {
       doctorName,
       medicalHistory
     }
-    const apiKey = process.env.LIGHT_HOUSE_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_LIGHT_HOUSE_API_KEY;
     const uploadResponse = await lighthouse.uploadText(
       JSON.stringify(patient),
       apiKey, firstName
@@ -47,7 +47,9 @@ export default function Home() {
     );
 
     console.log(uploadResponse);
-    console.log(patient)
+    console.log(patient);
+    const dbResponse= await insert (uploadResponse.data.Hash);
+    console.log("db response ", dbResponse);
   }
 
   // pass the array of patient ids

@@ -29,7 +29,7 @@ export default function Home() {
             areaOfSpecialization,
             yearsOfExperience
         }
-        const apiKey = process.env.LIGHT_HOUSE_API_KEY;
+        const apiKey = process.env.NEXT_PUBLIC_LIGHT_HOUSE_API_KEY;
         const uploadResponse = await lighthouse.uploadText(
             JSON.stringify(doctor),
             apiKey, firstName
